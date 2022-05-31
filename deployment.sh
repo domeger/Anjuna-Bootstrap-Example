@@ -71,7 +71,7 @@ clear
 
 echo "Change Allocator Memory"
 echo "---------------------------"
-sudo sed -i 's/^memory_mib:.*/memory_mib: 4096/' /etc/nitro_enclaves/allocator.yaml
+sudo sed -i 's/^memory_mib:.*/memory_mib: $MEMORY/' /etc/nitro_enclaves/allocator.yaml
 sleep 2
 echo -ne '>>>>>>>>>>>>>>            [75%]\r'
 clear
