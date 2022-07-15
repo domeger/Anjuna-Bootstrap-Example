@@ -34,6 +34,22 @@ echo -ne '>>>>>>>                   [40%]\r'
 sleep 2
 clear
 
+echo "Download Binary"
+echo "---------------------------"
+wget https://api.downloads.anjuna.io/v1/releases/anjuna-nitro-runtime.$VERSION.tar.gz \
+  --header="X-Anjuna-Auth-Token:$APIKEY"
+sleep 2
+echo -ne '>>>>>>>>>>>>>>>>>>        [86%]\r'
+clear
+
+echo "Extract Binary"
+echo "---------------------------"
+sudo tar -xvoz -C /opt/anjuna/nitro -f anjuna-nitro-runtime.$VERSION.tar.gz
+sleep 2
+echo -ne '>>>>>>>>>>>>>>>>>>>>>>>   [90%]\r'
+clear
+
+
 echo "Installing Docker"
 echo "---------------------------"
 sudo yum install -y docker
@@ -102,21 +118,6 @@ echo "---------------------------"
 sudo mkdir -p /opt/anjuna/nitro
 sleep 2
 echo -ne '>>>>>>>>>>>>>>>>          [84%]\r'
-clear
-
-echo "Download Binary"
-echo "---------------------------"
-wget https://api.downloads.anjuna.io/v1/releases/anjuna-nitro-runtime.$VERSION.tar.gz \
-  --header="X-Anjuna-Auth-Token:$APIKEY"
-sleep 2
-echo -ne '>>>>>>>>>>>>>>>>>>        [86%]\r'
-clear
-
-echo "Extract Binary"
-echo "---------------------------"
-sudo tar -xvoz -C /opt/anjuna/nitro -f anjuna-nitro-runtime.$VERSION.tar.gz
-sleep 2
-echo -ne '>>>>>>>>>>>>>>>>>>>>>>>   [90%]\r'
 clear
 
 echo "Net Cap Enabled"
