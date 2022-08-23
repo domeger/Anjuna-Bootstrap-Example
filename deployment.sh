@@ -116,5 +116,11 @@ echo "---------------------------"
 sudo mkdir -p /var/log/nitro_enclave
 sleep 2
 
+echo "Installing DRDB for at Rest Layer"
+echo "---------------------------"
+sudo cd /opt/anjuna/nitro/drbd/
+sudo ./parent-drbd-setup.sh -build
+sleep 2
+
 echo "Completed"
 echo -ne '\n'
