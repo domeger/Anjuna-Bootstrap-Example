@@ -118,8 +118,8 @@ sleep 2
 
 echo "Installing DRDB for at Rest Layer"
 echo "---------------------------"
-sudo cd /opt/anjuna/nitro/drbd/
-sudo ./parent-drbd-setup.sh -build
+cd /opt/anjuna/nitro/drbd/
+./parent-drbd-setup.sh -build
 sleep 2
 
 echo "Completed"
